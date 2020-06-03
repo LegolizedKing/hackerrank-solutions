@@ -1,0 +1,26 @@
+/                                                                                                                                                                                                    def jump(l,n):
+	j=0
+	i=0
+	while i<n-1:
+		if l[i]=='1':
+			i+=1
+			continue
+		else:
+			if l[i+1]=='0':					
+				if l[i+2]=='0':
+					j+=1
+					i+=2
+				else:
+					j+=1
+					i+=1
+			else:
+				j+=1
+				i+=1
+				continue
+	return j
+
+n=6
+c=input()
+l=list(c)
+r=jump(l,n)
+print(r)
