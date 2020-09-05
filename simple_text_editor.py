@@ -1,24 +1,20 @@
-t=int(input())
 s=""
-stack=[]
-stack.append(s)
-i=1
-for _ in range(t):
-    num=list(input().split())
-    if int(num[0])==1:
-        s+=str(num[1])
-        stack.append(s)
-        i+=1
-    elif int(num[0])==2:
-        a=int(num[1])
-        s=s[:-a]
-        stack.append(s)
-        i+=1
-    elif int(num[0])==3:
-        a=int(num[1])
-        print(s[a-1])
-    elif int(num[0])==4:
-        stack.pop()
-        i-=1
-        s=stack[i-1]
-       
+h=[]
+n=int(input())
+for i in range(n):
+  u = input()
+  if ' ' in u:
+    u, t = u.split(' ')
+  if u=='1':
+    h.append(t)
+    s+=t
+  elif u=='2':
+    h.append(s)
+    t=int(t)
+    s=s[:len(s)-t]
+  elif u=='3':
+    t=int(t)
+    print(s[t-1])
+  else:
+    s=h.pop()
+
